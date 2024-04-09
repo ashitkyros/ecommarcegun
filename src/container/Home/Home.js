@@ -91,16 +91,24 @@ function Home() {
           </div>
         </section>
 
-        <section className="bg-[url('https://cdn.shopify.com/s/files/1/0857/2085/8938/files/Frame_1000004952new.jpg?v=1709616432')] w-full bg-cover h-screen bg-no-repeat">
-          <div className="container mx-auto mb-20">
-            <div className="grid grid-cols-2 justify-between">
+        <section className="mb-20 flex items-center bg-[url('https://cdn.shopify.com/s/files/1/0857/2085/8938/files/Frame_1000004952new.jpg?v=1709616432')] w-full bg-cover h-screen bg-no-repeat">
+          <div className="container mx-auto">
+            <div className="grid grid-cols-2">
               <div>
-              <img src="https://kymee-jewellery.myshopify.com/cdn/shop/files/Rectangle_40.png?v=1709618208" />
+                <img src="https://kymee-jewellery.myshopify.com/cdn/shop/files/Rectangle_40.png?v=1709618208" />
               </div>
-              <div className="bg-slate-400 w-[200px] h-[200px]"></div>
+              <div className="flex justify-center items-center w-full h-full">
+                <div>
+                  <div className="bg-slate-400 w-[300px] h-[300px]"></div>
+                  <h1 className="text-2xl">Compass Rose Pendant Necklace</h1>
+                  <p className="text-xl flex gap-6 items-center">
+                    Rs. 1,364.00<span className="line-through text-sm text-[#808080]">Rs. 2,064.00</span>
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
-        </section>
+        </section> 
       </main>
     </>
   );

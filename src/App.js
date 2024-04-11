@@ -3,11 +3,12 @@ import "./App.css";
 import Header from "./components/header/Header";
 import Home from "./container/Home/Home";
 import { Routes, Route } from "react-router-dom";
-import ProductsPage from "./container/Product/ProductsPage";
+import ProductsPage, { baseURL } from "./container/Product/ProductsPage";
 import Category1 from "./container/Categories/Category1";
 import Category2 from "./container/Categories/Category2";
 import Category3 from "./container/Categories/Category3";
 import Category4 from "./container/Categories/Category4";
+import ProductDetail from "./container/Product/ProductDetail";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/products" element={<ProductsPage />}></Route>
+        <Route path="/productsdetail" element={<ProductDetail products={baseURL}/>} ></Route>
         <Route path="/category1" element={<Category1 />}></Route>
         <Route path="/category2" element={<Category2 />}></Route>
         <Route path="/category3" element={<Category3 />}></Route>

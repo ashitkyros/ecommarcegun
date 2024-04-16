@@ -1,6 +1,6 @@
 import { createSlice, nenoid } from "@reduxjs/toolkit";
 const initialState = {
-  products: [{ id: 1, price: 123 }],
+  user: [{ id: 1, title: "hello" }],
 };
 
 const userSlice = createSlice({
@@ -8,8 +8,7 @@ const userSlice = createSlice({
   initialState,
   reducers: {
     addData: (state, action) => {
-        console.log(state,"state")
-        console.log(action,"action")
+      state.user.push(action.payload);
     },
   },
 });

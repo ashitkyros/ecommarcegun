@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {useDispatch} from 'react-redux'
 import { addData } from "../Redux/Slices/UserSlide";
 
@@ -273,11 +273,12 @@ export const baseURL = [
 ];
 function ProductsPage() {
   const [Data, setData] = useState(baseURL);
+  const navigator = useNavigate();
   const dispatch = useDispatch();
   const handleProduct = (productId) => {
     const product = Data.filter(item => item.id === productId)[0];
-    // console.log(product,"hehehehe");  
-    dispatch(addData(product))
+    dispatch(addData(product));
+    // navigator("/productsdetail/:id");
   }
   return (
     <>
@@ -291,9 +292,9 @@ function ProductsPage() {
               <div className="card_descr">
                 <h1 className="text-xl font-medium mt-3">{item.title.length > 20 ? item.title.substring(0, 20) + "..." : item.title}</h1>
                 <p className="text-[18px] my-2">Price: ${item.price}</p>
-                {/* <Link to={`/products/${item.id}`}> */}
+                <Link to={`/products/${item.id}`}>
                   <button className="w-full py-2 bg-black text-white" onClick={()=>handleProduct(item.id)}>Buy Now</button>
-                {/* </Link> */}
+                </Link>
               </div>
             </div>
           ))}
